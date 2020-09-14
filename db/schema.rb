@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_09_14_134152) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "orders", force: :cascade do |t|
     t.integer "shopid"
     t.integer "itemid"
@@ -43,8 +40,8 @@ ActiveRecord::Schema.define(version: 2020_09_14_134152) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

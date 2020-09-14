@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# We fully supports [GitPod](https://gitpod.io) for development
