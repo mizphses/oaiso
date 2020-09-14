@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザ  #g
+
+    attributes:
+      user:
+        confirmation_sent_at: パスワード確認送信時刻  #g
+        confirmation_token: パスワード確認用トークン  #g
+        confirmed_at: パスワード確認時刻  #g
+        current_sign_in_at: 現在のログイン時刻  #g
+        current_sign_in_ip: 現在のログインIPアドレス  #g
+        email: メールアドレス  #g
+        encrypted_password: 暗号化パスワード  #g
+        failed_attempts: 失敗したログイン試行回数  #g
+        last_sign_in_at: 最終ログイン時刻  #g
+        last_sign_in_ip: 最終ログインIPアドレス  #g
+        locked_at: ロック時刻  #g
+        name: 名前  #g
+        remember_created_at: ログイン記憶時刻  #g
+        reset_password_sent_at: パスワードリセット送信時刻  #g
+        reset_password_token: パスワードリセット用トークン  #g
+        role: 役割  #g
+        unconfirmed_email: 未確認Eメール  #g
+        unlock_token: ロック解除用トークン  #g

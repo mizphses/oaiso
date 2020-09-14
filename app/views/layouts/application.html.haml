@@ -1,0 +1,66 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Oaiso
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+  %body
+
+
+    %nav.navbar.navbar-dark.bg-dark.navbar-expand-lg
+      %a.navbar-brand.font-weight-bold{:href => "#"}
+        - if Settings.app['name'] != nil
+          -if Settings.app['logo'] == true
+            %span.icon-minilogo
+            .navbar-brand.side-0 Oaiso for
+            %span= Settings.app['name']
+        - else
+          %span.icon-minilogo
+          .navbar-brand.side-0 Oaiso
+      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item.active
+            %a.nav-link{:href => "/"}
+              %i.fas.fa-home
+              ホーム
+              %span.sr-only (current)
+          %li.nav-item
+            %a.nav-link{:href => "/home/about"}
+              %i.fas.fa-info-circle
+              使い方
+          %li.nav-item.dropdown
+            %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              %i.fas.fa-list
+              操作
+            .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+              %a.dropdown-item{:href => "#"} Action
+              %a.dropdown-item{:href => "#"} Another action
+              .dropdown-divider
+              %a.dropdown-item{:href => "#"} Something else here
+          %li.nav-item
+            %a.nav-link.disabled{:href => "#"} Disabled
+        - if user_signed_in?
+          =link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-light" do
+            %i.fas.fa-sign-out-alt
+            ログアウト
+        - else
+          %a.btn.btn-outline-light{:href => "/users/sign_in"}
+            %i.fas.fa-sign-in-alt
+            ログイン・登録
+    - if notice != nil
+      .alert.alert-primary= notice
+    - if alert != nil
+      .alert.alert-primary= alert
+    = yield
+:css
+  .side-0{
+    margin-left: 0%;
+    margin-right: 0%;
+  }

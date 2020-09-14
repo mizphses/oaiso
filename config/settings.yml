@@ -1,0 +1,10 @@
+app:
+  # En: Please place your event/store name
+  # Ja: イベント／ストア名を登録します。
+  name: "イベント名"
+  # En: If you set your shop name and want to hide Oaiso logo, please change the value "true" below into "false".
+  # Ja: もし上記のショップ名が設定されていてかつOaisoロゴを隠す場合は下のtrueをfalseにします。
+  logo: true
+  # En: If you enable the order(reservation) on internet, please change the value "false" info "true".
+  # Ja: オンラインでの予約を許可するには以下のfalseをtrueにします。
+  order: false
