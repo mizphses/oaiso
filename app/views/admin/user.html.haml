@@ -1,0 +1,38 @@
+.container-fluid
+  %h1 ユーザーの管理
+  %p Find me in app/views/admin/user.html.haml
+  %table.table
+    %thead
+      %tr
+        %th ID
+        %th Name
+        %th Email
+        %th Role
+        %th Control
+    %tbody
+      - @users.each do |user|
+        %tr
+          %th= user.id
+          %td= user.name
+          %td= user.email
+          %td= user.role
+          - if user.role != 9
+            %td= link_to '管理者にする', '/admin/user/'+user.id.to_s, :method => "put"
+          - else
+            %td= link_to '一般ユーザーにする', '/admin/user/'+user.id.to_s, :method => "put"
+
+:css
+  .pt1em {
+    margin-right: 3vw;
+    margin-left: 3vw;
+    margin-top: 3vw;
+  }
+  .card{
+    width: 41vw;
+  }
+  @media screen and (max-width:480px) {
+    .card{
+      width: 90%;
+    }
+  }
+  

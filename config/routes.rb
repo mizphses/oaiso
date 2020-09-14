@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'admin/index'
+  get 'admin/user'
+  get 'admin/shops'
+  get 'admin/addticket'
+  patch 'admin/user/:id' => 'admin#update'
+  put 'admin/user/:id' => 'admin#update'
   devise_for :users
   root to: "home#index"
   get 'home/index'

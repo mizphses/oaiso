@@ -13,27 +13,28 @@
             %p.card-text おあいそ！によりあなたの注文券を獲得することができます。
             %a.card-link{:href => "#"} Card link
             %a.card-link{:href => "#"} Another link
-      - else
-        .card.pt1em
-          .card-body
-            %h4.card-title Oaiso!コードの表示
-            %h6.card-subtitle.mb-2.text-muted Get Oaiso! code
-            %p.card-text Oaiso!コードが必要な際にこの画面から表示できます。
-            %a.card-link{"data-target" => "#AboutOaiso", "data-toggle" => "modal", :type => "button", :href => "#"} 情報を見る
       .card.pt1em
         .card-body
-          %h4.card-title 購入履歴
-          %h6.card-subtitle.mb-2.text-muted Purchace History
-          %p.card-text Oaiso!で購入した商品の一覧です。ここから受け取りコード・Oaiso!コードも発行できます。
-          %a.card-link{:href => "#"} Card link
-          %a.card-link{:href => "#"} Another link
+          %h4.card-title Oaiso!コードの表示
+          %p.card-text Oaiso!コードが必要な際にこの画面から表示できます。
+          %a.card-link{"data-target" => "#AboutOaiso", "data-toggle" => "modal", :type => "button", :href => "#"} 情報を見る
       .card.pt1em
         .card-body
           %h4.card-title ご利用者情報の変更
-          %h6.card-subtitle.mb-2.text-muted Edit Account
           %p.card-text アカウント登録情報（名前・メールアドレス・パスワード）の変更ができます。
           =link_to edit_user_registration_path, method: :get do
             進む
+      .card.pt1em
+        .card-body
+          %h4.card-title 購入履歴
+          %p.card-text Oaiso!で購入した商品の一覧です。ここから受け取りコード・Oaiso!コードも発行できます。
+          %a.card-link{:href => "/purchased"} 確認する
+      - if current_user.role == 9
+        .card.pt1em
+          .card-body
+            %h4.card-title 管理者メニュー
+            %p.card-text 管理者メニューでモデレーションします。
+            %a.card-link{:href => "/admin/index"} 開く
     / Modal
     #AboutOaiso.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "AboutOaisoTitle", :role => "dialog", :tabindex => "-1"}
       .modal-dialog.modal-dialog-centered{:role => "document"}
@@ -70,10 +71,12 @@
 
 :css
   .pt1em {
-    margin: 1em
+    margin-right: 3vw;
+    margin-left: 3vw;
+    margin-top: 3vw;
   }
   .card{
-    width: 48%;
+    width: 41vw;
   }
   @media screen and (max-width:480px) {
     .card{

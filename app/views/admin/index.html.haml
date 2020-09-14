@@ -1,0 +1,42 @@
+.container-fluid
+  %h1 管理者コンソール
+  %p この画面から管理します。
+  .row.mx-auto
+    .card.pt1em
+      .card-body
+        %h4.card-title ユーザー権限の操作
+        %p.card-text アカウント登録情報（名前・メールアドレス・パスワード）の変更ができます。
+        =link_to '/admin/user', method: :get do
+          進む
+
+    - if Settings.app['order'] == false
+      .card.pt1em
+        .card-body
+          %h4.card-title チケット購入操作
+          %p.card-text
+            Oaiso!アカウントにチケットを追加します。この操作は
+            %b
+              %i 管理者アカウントのみ
+            行うことができます。
+          %a.card-link{:href => "/purchased"} 確認する
+    .card.pt1em
+      .card-body
+        %h4.card-title ショップ管理
+        %p.card-text ショップ情報を管理します
+        %a.card-link{:href => "/admin/index"} 開く
+
+:css
+  .pt1em {
+    margin-right: 3vw;
+    margin-left: 3vw;
+    margin-top: 3vw;
+  }
+  .card{
+    width: 41vw;
+  }
+  @media screen and (max-width:480px) {
+    .card{
+      width: 90%;
+    }
+  }
+  

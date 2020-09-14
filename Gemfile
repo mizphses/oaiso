@@ -61,7 +61,7 @@ gem 'config'
 
 gem 'devise'
 
-gem 'rmagick', :require => 'RMagick'
+gem 'rmagick'
 gem 'rqrcode_png'
 gem 'chunky_png'
 
