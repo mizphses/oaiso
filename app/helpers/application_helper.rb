@@ -3,6 +3,7 @@ module ApplicationHelper
   require 'rqrcode_png'
 
   def qrcode(text, options = {})
-    ::RQRCode::QRCode.new(text, {size: 2,  level: :h}).as_svg.html_safe
+    qr = ::RQRCode::QRCode.new(text)
+    return ChunkyPNG::Image.from_datastream(qr.as_png.resize(500,500).to_datastream)
   end
 end

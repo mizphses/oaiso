@@ -44,7 +44,7 @@
             %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
               %span{"aria-hidden" => "true"} ×
           .modal-body
-            = qrcode "Hello world"
+            = qrcode current_user.email
             %hr
             %h3 ユーザー情報（手動入力用）
             %button#shower.btn.btn-success{:onclick => "document.getElementById('hidden').style.display='block';document.getElementById('shower').style.display='none';"} 表示する

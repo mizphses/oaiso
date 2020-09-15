@@ -62,4 +62,5 @@ Rails.application.configure do
   
   # Devise URL
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.hosts << "3000-daa7941c-dc10-4291-b562-5fd6b0a85fcf.ws-us02.gitpod.io"
 end
