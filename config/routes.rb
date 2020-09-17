@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :checkouts
+  resources :items
   resources :shops
   get 'admin/index'
   get 'admin/user'

@@ -1,0 +1,25 @@
+%h1 Listing checkouts
+
+%table
+  %thead
+    %tr
+      %th Shopid
+      %th Itemid
+      %th Userid
+      %th
+      %th
+      %th
+
+  %tbody
+    - @checkouts.each do |checkout|
+      %tr
+        %td= checkout.shopid
+        %td= checkout.itemid
+        %td= checkout.userid
+        %td= link_to 'Show', checkout
+        %td= link_to 'Edit', edit_checkout_path(checkout)
+        %td= link_to 'Destroy', checkout, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Checkout', new_checkout_path

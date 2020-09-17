@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Shopid:
+  = @checkout.shopid
+%p
+  %b Itemid:
+  = @checkout.itemid
+%p
+  %b Userid:
+  = @checkout.userid
+
+= link_to 'Edit', edit_checkout_path(@checkout)
+\|
+= link_to 'Back', checkouts_path

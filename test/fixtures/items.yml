@@ -3,11 +3,11 @@
 one:
   name: MyString
   shopid: 1
-  itemid: 1
+  description: MyString
   price: 1
 
 two:
   name: MyString
   shopid: 1
-  itemid: 1
+  description: MyString
   price: 1

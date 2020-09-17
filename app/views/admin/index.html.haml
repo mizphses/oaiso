@@ -5,7 +5,7 @@
     .card.pt1em
       .card-body
         %h4.card-title ユーザー権限の操作
-        %p.card-text アカウント登録情報（名前・メールアドレス・パスワード）の変更ができます。
+        %p.card-text アカウントの権限変更（管理者・一般ユーザー化）ができます
         =link_to '/admin/user', method: :get do
           進む
 
@@ -23,7 +23,7 @@
       .card-body
         %h4.card-title ショップ管理
         %p.card-text ショップ情報を管理します
-        %a.card-link{:href => "/admin/index"} 開く
+        %a.card-link{:href => "/shops/"} 開く
 
 :css
   .pt1em {
