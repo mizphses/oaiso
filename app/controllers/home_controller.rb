@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  require 'rqrcode'
   def index
   end
 
