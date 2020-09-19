@@ -4,7 +4,7 @@ class CheckoutsController < ApplicationController
   # GET /checkouts
   # GET /checkouts.json
   def index
-    @checkouts = Checkout.all
+    @checkouts = Checkout.where(userid: 1)
   end
 
   # GET /checkouts/1

@@ -1,11 +1,12 @@
-%h1 Listing checkouts
+%h1
+  %span= current_user.name
+  さんのご注文
 
 %table
   %thead
     %tr
       %th Shopid
       %th Itemid
-      %th Userid
       %th
       %th
       %th
@@ -13,13 +14,12 @@
   %tbody
     - @checkouts.each do |checkout|
       %tr
-        %td= checkout.shopid
-        %td= checkout.itemid
-        %td= checkout.userid
+        %td= Shop.find(checkout.shopid).name
+        %td= Item.find(checkout.itemid).name
         %td= link_to 'Show', checkout
         %td= link_to 'Edit', edit_checkout_path(checkout)
         %td= link_to 'Destroy', checkout, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-
-= link_to 'New Checkout', new_checkout_path
+- if current_user.role == 9
+  = link_to 'New Checkout', new_checkout_path

@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "work.natom.oaisoapp",
+                 "sha256_cert_fingerprints": ["4A:03:92:31:37:69:9C:2E:57:68:06:80:D8:60:D3:2A:96:7F:DC:0A:B1:4C:9E:82:FD:90:B1:46:B5:0C:4F:D1"] }
+  }]
