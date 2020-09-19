@@ -43,8 +43,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  # Haml
-  gem 'haml-rails'
   # auto i18n by "bundle exec rails g i18n ja"
   gem 'i18n_generators'
 end
@@ -71,3 +69,7 @@ gem 'chunky_png'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
+gem 'haml-rails'
+
+gem 'serviceworker-rails'

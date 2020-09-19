@@ -112,5 +112,6 @@ Rails.application.configure do
 
 
   # Devise URL
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'oaiso.herokuapp.com' }
+  config.force_ssl = true
 end
